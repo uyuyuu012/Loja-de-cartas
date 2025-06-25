@@ -1,105 +1,111 @@
 @import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap');
-/*RESET BÁSICO*/
-*{
-    margin:0;
+
+/* RESET BÁSICO */
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     background: #f4f4f4;
     font-family: "Ancizar Serif", serif;
 }
-#container{
-    display:flex;
+
+#titulo {
+    font-size: 2rem;
+    margin: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    padding: 10px;
+}
+
+#container {
+    display: flex;
     flex-direction: column;
     min-height: 25vh;
 }
-header{
-    background:  #280550;
-    color:#fff;
+
+header {
+    background: #280550;
+    color: #fff;
     padding: 20px;
-    display:flex;
-    justify-content: space-around;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
 }
-header nav {
+
+header nav ul {
     list-style: none;
-	padding: 0;
-	margin:10px;
-	display:flex;
-	gap: 20px;
+    display: flex;
+    gap: 20px;
 }
-header nav  li a{
-	color:#fff;
-	text-decoration:none;
-	font-size:1.4rem;
+
+header nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.4rem;
 }
-header nav a:hover{
-    color:#fff;
+
+header nav a:hover {
+    color: #fff;
     border-radius: 200px;
     text-decoration: underline 5px #280550;
 }
-#conteudo{
-    display:grid;
-    grid-template-columns:1fr 20px;
-}
-main{
- display:flex;
-/*PERMITE QUE OS ITEMS FLEXIVEIS QUEBREM DE LINHA SE NÃO HOUVER ESPAÇO NA MESMA LINHA */
-flex-wrap:wrap;
-justify-content:center;
 
+#conteudo {
+    display: grid;
+    grid-template-columns: 1fr 20px;
 }
-.Banner1{
-    padding: 10px;
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.Banner2
-{
-    padding: 10px;
-}
-.Banner3
-{
+
+.Banner1,
+.Banner2,
+.Banner3 {
     padding: 10px;
 }
 
-.Banner1 img
-{
+.Banner1 img,
+.Banner2 img,
+.Banner3 img {
     width: 100%;
     height: 300px;
     margin-top: 10px;
     border-radius: 20px;
 }
-.Banner2 img
-{
-    width: 100%;
-    height: 300px;
-    margin-top: 10px;
-    border-radius: 20px;
-}
-.Banner3 img
-{
-    width: 100%;
-    height: 300px;
-    margin-top: 10px;
-    border-radius: 20px;
-}
-.preco{
+
+.preco {
     font-weight: 700;
     margin-top: 10px;
     text-align: center;
-    color:#000000;
+    color: #000;
     font-size: 1.7rem;
 }
-button{
-    background:  #4b0b93;   
+
+button {
+    background: #4b0b93;
     margin-top: 15px;
     margin-left: 10px;
     padding: 15px 45px;
     border-radius: 20px;
     cursor: pointer;
-    color:#fff;
+    color: #fff;
 }
-button:hover{
-    background-image: linear-gradient( #280550,rgb(59, 4, 111));
+
+button:hover {
+    background-image: linear-gradient(#280550, rgb(59, 4, 111));
 }
 
 .produto {
@@ -164,115 +170,121 @@ button:hover{
     line-height: 1.6;
 }
 
-
-footer{
+footer {
     background: #280550;
     color: #fff;
     padding: 20px 0;
     margin-top: auto;
-    
 }
+
 .footer-content {
     display: flex;
     justify-content: space-around;
     max-width: 100%;
-    margin: 0 auto;}
-.footer-content h3{
+    margin: 0 auto;
+    list-style: none;
+}
+
+.footer-content h3 {
     margin-bottom: 30px;
 }
-    .footer-content{
-        list-style: none;
-    }
-    .footer-content li{
-        margin-bottom: 5px;
-    }
-    .footer-content a{
-        color: #fff;
-        text-decoration: none;
-    }
 
-    .hamburguer {
+.footer-content li {
+    margin-bottom: 5px;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* MENU HAMBURGUER */
+.hamburguer {
     cursor: pointer;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     display: none;
-    }   
+}
 
-    .barra {
-        display: block;
-        width: 3rem;
-        height: .3rem;
-        background-color: white;
-        margin: .5rem auto;
-        border-radius: 10px;
-        transition: .5s;
-    }
+.barra {
+    display: block;
+    width: 3rem;
+    height: .3rem;
+    background-color: white;
+    margin: .5rem auto;
+    border-radius: 10px;
+    transition: .5s;
+}
 
-    /* RESPONSIVIDADE */
-    @media(max-width:768px){
-
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
     header nav {
         position: absolute;
         top: 0;
         left: -100%;
         width: 100%;
-    height: 100vh;
-    background-color: #280550;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-    list-style: none;
-    z-index: 1;
-    padding: 0;
-    margin: 0;
+        height: 100vh;
+        background-color: #280550;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        z-index: 2;
     }
-    header nav li{
+
+    header nav ul {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        padding: 0;
+    }
+
+    header nav li {
         width: 300px;
         height: 50px;
         text-align: center;
         border-radius: 40px;
         font-size: 1.3rem;
-        background: transparent;
     }
-    header nav li a{
+
+    header nav li a {
         display: flex;
         justify-content: center;
         align-items: center;
-        color:#ffffff; 
+        color: #ffffff;
     }
-    header nav li a:hover{
+
+    header nav li a:hover {
         text-decoration: none;
     }
-
-
- 
-    .footer-content{
-        display: flex;
-        text-align: center;
-        flex-direction: column;
-        max-width: 100%;
-        margin:  0 auto;
-    }
-
-        /* MENU HAMBURGUER */
 
     .hamburguer {
         display: block;
     }
 
-    /* Primeira linha */
-    .hamburguer.active .barra:first-child {
-        transform: translateY(8px) rotate(360deg) rotate(45deg);
+    nav.active {
+        left: 0;
     }
-    /* Segunda linha */
+
+    .hamburguer.active .barra:first-child {
+        transform: translateY(8px) rotate(45deg);
+    }
+
     .hamburguer.active .barra:nth-child(2) {
         opacity: 0;
     }
-    /* Terceira linha */
+
     .hamburguer.active .barra:last-child {
-        transform: translateY(-8px) rotate(-360deg) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
     }
 
-  
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav.active {
+    left: 0;
+    }
+
 }
